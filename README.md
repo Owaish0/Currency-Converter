@@ -1,94 +1,39 @@
-
-
 # Currency Converter
 
-A simple and responsive currency converter application built using HTML, CSS, JavaScript, and React, configured with Vite. This application allows users to convert amounts from one currency to another and provides a user-friendly interface for seamless conversion.
+A React learning project for selecting currencies, converting an amount, and swapping the source and target currencies. Built with **React, Vite, and Tailwind CSS**.
 
-![Currency Converter]
+## Data source
 
-## Features
+`src/hooks/useCurrencyInfo.js` fetches the Fawaz Ahmed currency dataset through jsDelivr. The source currently pins the dataset to **2024-03-06**. Results use that historical snapshot; they are not live exchange rates.
 
-- Real-time currency conversion
-- Swap button to quickly exchange the "From" and "To" currencies
-- User-friendly and responsive design
-- Easy to extend and maintain
+## Run locally
 
-## Technologies Used
-
-- HTML
-- CSS
-- JavaScript
-- React
-- Vite
-
-## Getting Started
-
-Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
-
-### Prerequisites
-
-Make sure you have the following installed on your local machine:
-
-- Node.js
-- npm (Node Package Manager)
-
-### Installation
-
-1. Clone the repository to your local machine:
+Requires Node.js and npm.
 
 ```bash
-git clone https://github.com/aayush2761/currencyConverter.git
-```
-
-2. Navigate to the project directory:
-
-```bash
-cd currency-converter
-```
-
-3. Install the dependencies:
-
-```bash
-npm install
-```
-
-### Running the Application
-
-To run the application in development mode, use the following command:
-
-```bash
+git clone https://github.com/Owaish0/Currency-Converter.git
+cd Currency-Converter
+npm ci
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
-
-The page will reload if you make edits. You will also see any lint errors in the console.
-
-### Building for Production
-
-To build the app for production, use the following command:
+Open the local address printed by Vite. Select the source and target currencies, enter an amount, and click Convert. Swap exchanges the selected currencies.
 
 ```bash
 npm run build
+npm run preview
 ```
 
-This will create an optimized production build in the `dist` folder.
+## Source guide
 
-### Previewing the Production Build
+- `src/App.jsx`: selected currencies, amount, swap, and conversion state.
+- `src/components/InputBox.jsx`: reusable amount and currency input.
+- `src/hooks/useCurrencyInfo.js`: fetches rate data when the base currency changes.
 
-To preview the production build locally, use the following command:
+## Next improvements
 
-```bash
-npm run serve
-```
+Add loading and failure states, validate unavailable rates, and make the dataset date visible to the user. A switch to current rates should be an explicit implementation change with a displayed data timestamp.
 
-Open [http://localhost:5000](http://localhost:5000) to view the production build in the browser.
+## Attribution
 
-## Usage
-
-1. Enter the amount you want to convert in the "From" field.
-2. Select the currency type from the dropdown menu.
-3. Select the target currency type in the "To" field.
-4. Click the "Convert" button to see the conversion result.
-5. Use the "Swap" button to switch the "From" and "To" currencies quickly.
-
+The previous README linked to [aayush2761/currencyConverter](https://github.com/aayush2761/currencyConverter). That reference is retained here for provenance; this README does not assert sole original authorship. Rate data comes from [Fawaz Ahmed's currency API](https://github.com/fawazahmed0/exchange-api).
